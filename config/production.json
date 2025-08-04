@@ -1,0 +1,23 @@
+{
+  "flask": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false,
+    "threaded": true
+  },
+  "ai_model": {
+    "use_cache": true,
+    "model_timeout": 30,
+    "max_response_length": 500
+  },
+  "security": {
+    "enable_cors": true,
+    "rate_limiting": true,
+    "max_requests_per_minute": 60
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "hospital_ai_production.log",
+    "max_size_mb": 10
+  }
+}
