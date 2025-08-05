@@ -117,7 +117,7 @@ class HospitalAIAgentApp:
         
         # Simple medical icon
         icon_label = tk.Label(title_frame,
-                             text="🏥",
+                             text="[H]",
                              font=('Segoe UI', 16),
                              fg=self.colors['accent'],
                              bg=self.colors['white'])

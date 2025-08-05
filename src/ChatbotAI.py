@@ -499,7 +499,7 @@ class NLPEnhancedChatbot:
     def generate_emergency_response(self, entities, user_input):
         """Generate emergency contact responses"""
         return {
-            'answer': "🚨 EMERGENCY CONTACTS: Nairobi Hospital: +254-20-2845000 | Kenyatta National: +254-20-2726300 | Both hospitals operate 24/7 emergency services. For life-threatening situations, call immediately.",
+            'answer': "EMERGENCY CONTACTS: Nairobi Hospital: +254-20-2845000 | Kenyatta National: +254-20-2726300 | Both hospitals operate 24/7 emergency services. For life-threatening situations, call immediately.",
             'confidence': 0.9,
             'source': 'dynamic_generation',
             'intent': 'emergency',

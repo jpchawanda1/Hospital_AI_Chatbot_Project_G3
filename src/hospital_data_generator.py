@@ -1362,10 +1362,10 @@ class HospitalDataGenerator:
         with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
         
-        print(f"✅ Saved to:")
-        print(f"   📄 {csv_file}")
-        print(f"   📄 {csv_file2}")
-        print(f"   📄 {json_file}")
+        print(f"Saved to:")
+        print(f"   {csv_file}")
+        print(f"   {csv_file2}")
+        print(f"   {json_file}")
 
 def main():
     """Main function"""
@@ -1376,11 +1376,11 @@ def main():
     data = generator.generate_comprehensive_dataset()
     generator.save_data(data)
     
-    print(f"\n🏥 Successfully generated comprehensive hospital dataset!")
-    print(f"📊 Total Q&A pairs: {len(data)}")
-    print(f"🏥 Hospitals covered: Nairobi Hospital & Kenyatta National Hospital")
-    print(f"📋 Categories: {len(set(item['category'] for item in data))}")
-    print("\nDataset is ready for the Hospital AI Agent! 🚀")
+    print(f"\nSuccessfully generated comprehensive hospital dataset!")
+    print(f"Total Q&A pairs: {len(data)}")
+    print(f"Hospitals covered: Nairobi Hospital & Kenyatta National Hospital")
+    print(f"Categories: {len(set(item['category'] for item in data))}")
+    print("\nDataset is ready for the Hospital AI Agent!")
 
 if __name__ == "__main__":
     main()
