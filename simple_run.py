@@ -51,13 +51,13 @@ def start_backend():
     """Start the Flask backend server"""
     print("Starting backend server...")
     
-    if not Path("src/chatbot_backend.py").exists():
-        print("[ERROR] Backend file not found: src/chatbot_backend.py")
+    if not Path("src/ChatbotAI.py").exists():
+        print("[ERROR] Backend file not found: src/ChatbotAI.py")
         return None
     
     try:
         process = subprocess.Popen([
-            sys.executable, "src/chatbot_backend.py"
+            sys.executable, "src/ChatbotAI.py"
         ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         print(f"[OK] Backend server started (PID: {process.pid})")
@@ -112,9 +112,9 @@ def run_basic_tests():
     
     # Test 1: Check required files exist
     required_files = [
-        "src/chatbot_backend.py",
+        "src/ChatbotAI.py",
         "src/chatbot_popup_app.py", 
-        "data/common_questions.csv"
+        "data/hospital_comprehensive_data.csv"
     ]
     
     for file in required_files:
@@ -127,7 +127,7 @@ def run_basic_tests():
     # Test 2: Check data file structure
     try:
         import csv
-        with open("data/common_questions.csv", 'r', encoding='utf-8') as f:
+        with open("data/hospital_comprehensive_data.csv", 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
             rows = list(reader)
             print(f"[OK] Data file loaded: {len(rows)-1} Q&A pairs")  # -1 for header
