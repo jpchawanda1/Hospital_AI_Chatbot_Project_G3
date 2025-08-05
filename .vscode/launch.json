@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run Hospital AI Chatbot",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simple_run.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": []
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Open poster.html",
