@@ -6,8 +6,12 @@
 ![Status](https://img.shields.io/badge/status-production--ready-brightgreen.svg)
 
 ## 🏥 Project Overview
+This project is a multilingual AI-powered chatbot designed for healthcare centers, particularly targeting hospitals in Kenya like Kenyatta National Hospital, Arga Khan, and Nairobi Hospital. The chatbot provides support in both English and Swahili, offering services such as emergency response, appointment booking, hospital information, and more.
 
-**Hospital AI Agent** is an advanced NLP-enhanced artificial intelligence system designed to provide intelligent medical information assistance for **Nairobi Hospital** and **Kenyatta National Hospital**. The system combines state-of-the-art machine learning, natural language processing, and reinforcement learning to deliver accurate, contextual medical information to patients and healthcare staff.
+### The chatbot utilizes:
+BERT embeddings for language understanding.
+Intent classification via a machine learning model.
+Streamlit for the web-based interface.
 
 ### 🎯 Key Features
 
@@ -17,6 +21,169 @@
 - **🏥 Real Medical Data:** 75+ comprehensive Q&A pairs from actual hospital information
 - **🎨 Modern Interface:** Professional desktop GUI and RESTful API
 - **🐳 Production Ready:** Docker deployment and production configurations
+
+#⚙️ **Workflow & Modules**
+### 1. Data Collection and Annotation
+
+_Manually grouped questions by intent:_
+Universal healthcare queries
+Kenyan-specific hospital queries
+Swahili language support
+Emergency responses
+Services & inquiries
+Thank you messages
+
+__Each question maps to an intent like:_
+appointment_booking
+emergency_help
+hospital_directions
+insurance_billing
+thank_you
+swahili_support
+
+### 2. Data Preprocessing (data_preprocessing.py)
+-Lowercasing all text
+-Removing stopwords, punctuation
+-Label encoding for intents
+-Train/test split
+
+```python
+
+df['question'] = df['question'].str.lower()
+le = LabelEncoder()
+df['intent_encoded'] = le.fit_transform(df['intent'])
+```
+3. Feature Extraction using BERT (train_model.py)
+Using pre-trained BERT (bert-base-uncased) from HuggingFace Transformers
+Embedding each question into a 768-dim vector
+Classifying with Logistic Regression
+
+```python
+from transformers import BertTokenizer, BertModel
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertModel.from_pretrained('bert-base-uncased')
+```
+### 4. Training the Model
+Vectorizing inputs with BERT
+Saving the trained classifier and tokenizer
+Output:
+```
+intent_model.pkl, tokenizer.pkl
+```
+
+```python
+joblib.dump(classifier, 'models/intent_model.pkl')
+joblib.dump(tokenizer, 'models/tokenizer.pkl')
+```
+### 5. Prediction / Inference (predict_intent.py)
+-Load tokenizer and model
+-Preprocess input
+-Predict top intent
+-Match to defined response dictionary
+
+### 6. GUI Interface (chatbot_ui.py)
+Streamlit app
+-Accepts user input in English or Swahili
+-Displays predicted intent and relevant response
+
+```python
+st.title("🏥 Healthcare Chatbot")
+user_input = st.text_input("Ask your question:")
+```
+
+### 7. Multilingual & Emergency Handling
+-English and Swahili intents handled in model training
+-Keywords like “emergency”, “help”, “haraka” routed to emergency intent
+-Graceful responses for low-confidence predictions
+
+### 💬 Sample Responses
+Intent	Example Questions	Response
+appointment_booking	How do I book an appointment?	You can book online or call 0700 000 000
+emergency_help	I can't breathe, please help!	🚨 Please call 999 immediately or go to ER!
+swahili_support	Jambo, nataka huduma ya daktari	Karibu! Tafadhali eleza shida yako
+hospital_directions	Where is Nairobi Hospital?	It is located at Argwings Kodhek Rd, Nairobi
+insurance_billing	Do you accept NHIF?	Yes, NHIF is accepted at all departments
+
+### 🧪 Testing and Optimization
+Confidence threshold: if below 0.6, bot asks for clarification
+-Embedding layer outputs cached for faster predictions
+-Expandable Swahili dataset support
+-Additional language support possible via HuggingFace models
+
+### 🔐 Security & Ethics
+-All data anonymized
+-Bot does not give medical diagnosis
+-Redirects emergency and critical cases to human operators
+
+### ✅ Future Enhancements
+-Voice input via Google Speech-to-Text
+-Live WhatsApp/Facebook Messenger integration
+-DialogFlow/NLU fallback engine
+-Admin panel for real-time question-logging and feedback
+
+### 📦 Requirements
+txt
+transformers
+sklearn
+joblib
+pandas
+numpy
+streamlit
+Scipy
+
+### Install with:
+```bash
+pip install -r requirements.txt
+```
+### 🚀 How to Run
+```bash
+streamlit run app/chatbot_ui.py
+```
+
+### 1. Introduction
+
+    "This documentation provides a comprehensive overview of a healthcare chatbot developed using natural language "
+    "processing techniques and deployed with a Streamlit interface. The chatbot is designed to assist users with "
+    "queries related to hospital services, emergency support, and multilingual support. It is powered by BERT "
+    "embeddings for intent classification and leverages a user-friendly interface for interaction."
+
+### 2. Project Workflow
+
+    "The chatbot development followed a structured machine learning pipeline consisting of the following phases:
+    
+workflow_steps 
+1. Data Collection and Preprocessing
+2. Embedding Generation using BERT
+3. Intent Classification Model Training
+4. Model Evaluation and Saving
+5. Streamlit-based GUI Development and Integration
+
+## Data Structure
+### 3. Dataset and Intent Categorization
+"The dataset comprises questions and their corresponding intents. These are categorized into several strata:"
+
+• Universal healthcare queries
+• Kenyan hospital specific queries
+• Emergency detection
+• Services and information
+• Thank you message
+
+## Model Training
+### 4. Model Training and Evaluation
+
+    "The intent classifier is built using logistic regression. BERT is used to encode text queries into vector"
+    "representations. The model is trained to classify intents based on encoded queries. Evaluation metrics like "
+    "accuracy and confusion matrix are used to assess performance."
+
+# Streamlit GUI
+### 5. Streamlit User Interface
+    "The user interface is developed using Streamlit. It allows users to input queries and receive intent-based "
+    "responses from the chatbot. The backend model integrates seamlessly with the frontend for real-time prediction."
+
+# Future Improvements
+### 6. Future Improvements"
+    "Future improvements may include multilingual NLP support, advanced contextual understanding, integration with "
+    "hospital systems (for real-time appointment booking), and support for voice-based interactions."
 
 ## 🚀 Quick Start
 
