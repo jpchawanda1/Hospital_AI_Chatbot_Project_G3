@@ -10,10 +10,10 @@
 **Hospital AI Agent** is an advanced NLP-enhanced artificial intelligence system designed to provide intelligent medical information assistance for **Nairobi Hospital** and **Kenyatta National Hospital**. The system combines state-of-the-art machine learning, natural language processing, and reinforcement learning to deliver accurate, contextual medical information to patients and healthcare staff.
 
 Team Members (G3)
-1. Justice Chawanda [@jpchawanda1]
-2. Kyeremateng Martin [@Majesty0]
-3. Abdulrahman Abdikadir [@el-manka123]
-4. Morvine Ouma [@wizkid254]
+1. Justice Chawanda - @jpchawanda1
+2. Kyeremateng Martin - @Majesty0
+3. Abdulrahman Abdikadir - @el-manka123
+4. Morvine Ouma - @wizkid254
 
 ### Key Features
 
