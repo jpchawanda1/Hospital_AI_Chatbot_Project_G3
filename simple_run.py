@@ -51,13 +51,13 @@ def start_backend():
     """Start the Flask backend server"""
     print("Starting backend server...")
     
-    if not Path("src/ChatbotAI.py").exists():
-        print("[ERROR] Backend file not found: src/ChatbotAI.py")
+    if not Path("notebooks/ChatbotAI.py").exists():
+        print("[ERROR] Backend file not found: notebooks/ChatbotAI.py")
         return None
     
     try:
         process = subprocess.Popen([
-            sys.executable, "src/ChatbotAI.py"
+            sys.executable, "notebooks/ChatbotAI.py"
         ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         print(f"[OK] Backend server started (PID: {process.pid})")
@@ -84,13 +84,13 @@ def start_popup():
     """Start the desktop popup application"""
     print("Starting desktop popup application...")
     
-    if not Path("src/chatbot_popup_app.py").exists():
-        print("[ERROR] Popup file not found: src/chatbot_popup_app.py")
+    if not Path("notebooks/chatbot_popup_app.py").exists():
+        print("[ERROR] Popup file not found: notebooks/chatbot_popup_app.py")
         return None
     
     try:
         process = subprocess.Popen([
-            sys.executable, "src/chatbot_popup_app.py"
+            sys.executable, "notebooks/chatbot_popup_app.py"
         ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         print(f"[OK] Desktop popup started (PID: {process.pid})")
@@ -112,8 +112,8 @@ def run_basic_tests():
     
     # Test 1: Check required files exist
     required_files = [
-        "src/ChatbotAI.py",
-        "src/chatbot_popup_app.py", 
+        "notebooks/ChatbotAI.py",
+        "notebooks/chatbot_popup_app.py", 
         "data/hospital_comprehensive_data.csv"
     ]
     
