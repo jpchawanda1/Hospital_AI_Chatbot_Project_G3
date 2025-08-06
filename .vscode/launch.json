@@ -13,11 +13,5 @@
             "cwd": "${workspaceFolder}",
             "args": []
         },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Open poster.html",
-            "file": "k:\\Code Projects\\Hospital_AI_Chatbot_Project_G3\\poster.html"
-        }
     ]
 }

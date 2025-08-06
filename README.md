@@ -14,7 +14,7 @@
 - **Advanced NLP:** Semantic understanding using Sentence Transformers (all-MiniLM-L6-v2)
 - **Machine Learning:** TF-IDF vectorization and cosine similarity matching
 - **Reinforcement Learning:** Adaptive learning from user feedback with exponential moving averages
-- **Real Medical Data:** 75+ comprehensive Q&A pairs from actual hospital information
+- **Real Medical Data:** 1,000+ comprehensive Q&A pairs from actual hospital information
 - **Modern Interface:** Professional desktop GUI and RESTful API
 - **Production Ready:** Docker deployment and production configurations
 
@@ -65,7 +65,7 @@ Hospital AI Agent System
 - **Backend:** Python 3.10+, Flask 2.3+
 - **ML/NLP:** PyTorch, Transformers, Sentence-Transformers, Scikit-learn
 - **Frontend:** Tkinter (Desktop GUI)
-- **Data:** CSV datasets with 75+ medical Q&A pairs
+- **Data:** CSV datasets with 1,000+ medical Q&A pairs
 - **Deployment:** Docker, Gunicorn, Nginx
 
 ## Medical Information Coverage
@@ -74,7 +74,7 @@ Hospital AI Agent System
 - **Nairobi Hospital** (Private) - Argwings Kodhek Road, Hurlingham
 - **Kenyatta National Hospital** (Public) - Hospital Road, Upper Hill
 
-### Information Categories (20 types)
+### Information Categories (110+ types)
 1. **Contact Information** - Phone numbers, addresses, websites
 2. **Emergency Services** - 24/7 emergency contacts (+254-20-2845000, +254-20-2726300)
 3. **Appointment Booking** - Scheduling procedures and requirements
@@ -137,7 +137,7 @@ Hospital_AI_Agent/
 │   ├── chatbot_popup_app.py          # Desktop GUI interface
 │   └── hospital_data_generator.py     # Medical data generation
 ├── data/                             # Medical datasets
-│   ├── hospital_comprehensive_data.csv # Main dataset (75 Q&A pairs)
+│   ├── hospital_comprehensive_data.csv # Main dataset (1,000+ Q&A pairs)
 │   └── common_questions.csv          # Fallback general questions
 ├── notebooks/                        # Jupyter analysis
 │   ├── hospital_comprehensive_analysis.ipynb
@@ -180,7 +180,7 @@ pip install -r requirements.txt
 #### 2. Verify Installation
 ```bash
 # Test data loading
-python -c "import pandas as pd; print(f'Dataset loaded: {len(pd.read_csv("data/hospital_comprehensive_data.csv"))} records')"
+python -c "import pandas as pd; print(f'Dataset loaded: {len(pd.read_csv(\"data/hospital_comprehensive_data.csv\"))} records')"
 
 # Test ML components
 python -c "from sentence_transformers import SentenceTransformer; print('NLP components ready')"
@@ -212,7 +212,7 @@ GET /health
 ```json
 {
   "status": "healthy",
-  "qa_pairs_loaded": 75,
+  "qa_pairs_loaded": 1017,
   "model_type": "NLP-Enhanced Hospital AI Agent",
   "hospitals": ["nairobi_hospital", "kenyatta_national"]
 }
@@ -456,7 +456,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Achievements
 
 - **Complete Domain Transformation:** From e-commerce to healthcare
-- **Real Medical Data Integration:** 75+ verified hospital Q&A pairs
+- **Real Medical Data Integration:** 1,000+ verified hospital Q&A pairs
 - **Advanced AI Implementation:** NLP + ML + RL capabilities
 - **Production Deployment:** Docker, monitoring, security
 - **Comprehensive Documentation:** Setup, API, deployment guides
@@ -483,7 +483,7 @@ Hospital_AI_Agent/
 │   ├── chatbot_popup_app.py         # Desktop interface
 │   └── hospital_data_generator.py   # Data generation tool
 ├── data/                         # Medical datasets
-│   ├── hospital_comprehensive_data.csv  # 75 medical Q&A pairs
+│   ├── hospital_comprehensive_data.csv  # 1,000+ medical Q&A pairs
 │   └── common_questions.csv         # Fallback questions
 ├── notebooks/                    # Analysis notebooks
 │   ├── hospital_comprehensive_analysis.ipynb
@@ -511,7 +511,7 @@ Hospital_AI_Agent/
 
 ### Deployment Readiness
 The Hospital AI Agent is completely ready for production deployment featuring:
-- Real medical data from Nairobi hospitals (75+ verified Q&A pairs)
+- Real medical data from Nairobi hospitals (1,000+ verified Q&A pairs)
 - Advanced AI capabilities (NLP/ML/RL pipeline)
 - Docker containerization and orchestration
 - Comprehensive documentation and setup guides
@@ -521,7 +521,7 @@ The Hospital AI Agent is completely ready for production deployment featuring:
 
 ### Key Deliverables
 1. **Functional AI System:** Complete hospital information assistant
-2. **Real Medical Data:** 75+ Q&A pairs from actual Nairobi hospitals
+2. **Real Medical Data:** 1,000+ Q&A pairs from actual Nairobi hospitals
 3. **Advanced Technology:** NLP + ML + RL implementation
 4. **Production Deployment:** Docker, monitoring, security
 5. **Complete Documentation:** Installation, API, maintenance guides
